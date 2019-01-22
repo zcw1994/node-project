@@ -1,0 +1,27 @@
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{margin:0;padding:0;}
+body,html{
+	font:11px "微软雅黑",Arial;	
+	color:#3f333d;
+}
+li{
+	list-style:none;	
+}
+a{
+	text-decoration:none;
+	font-size:12px;	
+}		
+img{border:0;}
+h1,h2,h3,h4,h5,h6,b,strong{
+	font-weight:normal;
+	font-size:14px;	
+}
+input{
+	outline:none;	
+}
+.clearfix:after{
+	content:' ';
+	display:block;
+	height:0;
+	overflow:hidden;
+	clear:both;	
+}
