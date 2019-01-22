@@ -9,7 +9,10 @@ li{
 a{
 	text-decoration:none;
 	font-size:12px;	
-}		
+}	
+a:hover{
+	text-decoration:none;
+}	
 img{border:0;}
 h1,h2,h3,h4,h5,h6,b,strong{
 	font-weight:normal;

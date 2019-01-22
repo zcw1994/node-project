@@ -20,7 +20,9 @@ body{
   background: #fff;
   color: #000000;
   height: 64px;
-  line-height: 64px
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 .layout-body{
   flex: 1;
@@ -39,11 +41,48 @@ body{
 
 .zc-table{
   width: 100%;
-  text-align: center 
+  text-align: center ;
 }
 .zc-table th , .zc-table td,.zc-table{
   border: 1px solid #000000;
 }
 .zc-table .banner-img{
   width: 100px 
+}
+.header-left{
+  display: block;
+  cursor: pointer;
+  padding: 22px 24px;
+  font-size: 20px;
+}
+.header-left:hover{
+  background: #cccccc
+}
+.self-pagination{
+  text-align: center
+}
+.deleteInfo{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  background: #337ab7;
+  color: #fff
+}
+.deleteInfo:hover{
+  color:red;
+}
+.updateInfo{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  background: #337ab7;
+  margin-left: 10px;
+  color: #fff
+}
+.updateInfo:hover{
+  color:red;
 }

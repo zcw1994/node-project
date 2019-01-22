@@ -1,6 +1,7 @@
 //提供给前端ajax调用的接口地址 ，即url 地址
 
 const express = require('express');
+const async =require('async');
 //引入之前对banner内容的字段定义模块
 const BannerModel = require('../models/banner');
 const router = express.Router();
@@ -9,7 +10,7 @@ const router = express.Router();
 router.post('/add',function(req,res){
  var banner = new BannerModel({
     name:req.body.bannerName,
-    imgUrl : req.body.bannerUrl
+    imgUrl : req.body.bannerUrl 
   });
   banner.save(function(error){
     if (error) {
@@ -25,6 +26,74 @@ router.post('/add',function(req,res){
     }
   })
 });
+
+//搜索或查询数据库中的数据 http://localhost:3000/banner/search
+router.get('/search',function(req,res){
+  //分页
+  //1.得到前端传送过来的参数：页数和每页显示的数量
+  let pageNum = req.query.pageNum || 1;//当前的页数
+  let pageSize = req.query.pageSize || 2;//每页现实的数量
+
+  //获取数据的总数量,采用并行无关联
+  async.parallel([
+    function(cb){
+      BannerModel.find().countDocuments().then(num => {
+        cb(null,num);
+      }).catch(err => {
+        cb(err);
+      })
+    },
+    function(cb){
+      BannerModel
+      .find()
+      .skip(pageNum * pageSize - pageSize)
+      .limit(Number(pageSize))
+      .then(data => {
+        cb(null,data)
+      }).catch(err => {
+        cb(err)
+      })
+    }
+  ],function(err,result){
+    // console.log(result);
+    if (err) {
+      res.json({
+        code:-1,
+        msg : err.message
+      });
+    }else{
+      res.json({
+        code:0,
+        msg:'ok',
+        totalNum:result[0],
+        data:result[1],
+        totalPage : Math.ceil(result[0]/pageSize)
+      }) 
+    }
+  })
+
+
+
+ /* BannerModel.find(function(err,data){
+   if (err) {
+     console.log('查询失败',err.message)
+     res.json({
+       code:-1,
+       msg:err.message
+     })
+   }else{
+     console.log('查询成功');
+     res.json({
+        code:0,
+        msg:'ok',
+        data:data
+     })
+   }
+ })*/
+
+}) 
+
+
 
 //最后暴露出去
 module.exports = router;
