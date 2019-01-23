@@ -1,4 +1,3 @@
-const BannerModel = require('../../config/db');
 
 $(function () {
 
@@ -70,12 +69,10 @@ $(function () {
   });
 
   /* 删除操作 */
-  //  $('.deleteInfo').click(function(){
-  //   /* BannerModel.deleteOne({
-  //     name:$(this).parent().parent().find()
-  //   }) */
-  //   console.log($(this).parent().parent().children().index(1));
-  //  })
+   $('.deleteInfo').click(function(){
+    
+    console.log($(this).parent().parent().children().index(1));
+   })
 })
 
 
@@ -106,8 +103,8 @@ function search(pageNum, pageSize) {
                   <img  class ="banner-img" src="${item.imgUrl}" alt="">
                 </td>
                 <td>
-                  <a class = 'deleteInfo' href="javascript:;">删除</a>
-                  <a class = 'updateInfo' href="javascript:;">修改</a>
+                  <a class = "deleteInfo " href="javascript:;">删除</a>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">修改</button>
                 </td>
               </tr>
             `

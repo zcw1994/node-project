@@ -2,6 +2,8 @@
 
 const express = require('express');
 const async =require('async');
+const cheerio = require('cheerio');
+const http  = require('http');
 //引入之前对banner内容的字段定义模块
 const BannerModel = require('../models/banner');
 const router = express.Router();
@@ -92,7 +94,6 @@ router.get('/search',function(req,res){
  })*/
 
 }) 
-
 
 
 //最后暴露出去
