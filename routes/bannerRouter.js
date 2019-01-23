@@ -5,7 +5,7 @@ const async =require('async');
 const cheerio = require('cheerio');
 const http  = require('http');
 //引入之前对banner内容的字段定义模块
-const BannerModel = require('../models/banner');
+const BannerModel = require('../models/bannerModel');
 const router = express.Router();
 
 //添加banner： http://localhost.3000/banner/add

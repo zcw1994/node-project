@@ -12,8 +12,8 @@ const cookieParse = require('cookie-parser');
  app.use(express.urlencoded({extended : true}));
 
  //路由中间件
- const indexRouter = require('./routes/index');
- const bannerRouter = require('./routes/banner')
+ const indexRouter = require('./routes/indexRouter');
+ const bannerRouter = require('./routes/bannerRouter')
  //静态文件托管
 app.use(express.static(path.resolve(__dirname,'./public')));
  
