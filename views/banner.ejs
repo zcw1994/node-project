@@ -17,7 +17,7 @@
   <div class="layout-main">
     <%- include('./common/header.ejs')%>
     <div class="layout-body">
-
+      <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#addModal">添加</button>
       <table id="banner-table" class="layui-table zc-table" lay-even="" lay-skin="row">
         <colgroup>
           <col width="150">
@@ -47,13 +47,10 @@
           </tr> -->
         </tbody>
       </table>  
-      <!-- 添加按钮 -->
-      <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#addModal">添加</button>
-
         <!-- 分页 -->
       <nav aria-label="Page navigation" class="self-pagination">
         <ul id="pagination" class="pagination">
-          
+        
         </ul>
       </nav>
       <!--新增banner弹层 -->
@@ -93,7 +90,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="exampleModalLabel">影片修改</h4>
+              <h4 class="modal-title" id="exampleModalLabel">修改影片信息</h4>
             </div>
             <div class="modal-body">
               <form>
@@ -104,12 +101,13 @@
                 <div class="form-group">
                   <label for="message-text" class="control-label">新图片：</label>
                   <input type="text" class="form-control" id="message-text"/>
+                  <input type="hidden" id="message-hidden" />
                 </div>
               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-              <button type="button" class="btn btn-primary">确定修改</button>
+              <button id="bannerUpdate" type="button" class="btn btn-primary">确定修改</button>
             </div>
           </div>
         </div>

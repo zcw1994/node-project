@@ -101,24 +101,6 @@ router.get('/search', function (req, res) {
   })
 
 
-
-  /* BannerModel.find(function(err,data){
-    if (err) {
-      console.log('查询失败',err.message)
-      res.json({
-        code:-1,
-        msg:err.message
-      })
-    }else{
-      console.log('查询成功');
-      res.json({
-         code:0,
-         msg:'ok',
-         data:data
-      })
-    }
-  })*/
-
 })
 
 //删除数据库信息  http://localhost:3000/banner/delete
@@ -127,11 +109,21 @@ router.post('/delete', function (req, res) {
   BannerModel.findOneAndDelete({
     _id: id
   }).then((data) => {
+    console.log(data);
     if (data) {
       res.json({
         code: 0,
         msg: 'ok'
-      })
+      });
+      // http://localhost:3000/uploads/banners/1548330889918_1.png
+      var url = data.imgUrl.substr(22);
+      // console.log(path.resolve(__dirname,'.././',url));
+      try {
+        fs.unlinkSync(path.resolve(__dirname,'../public/',url))
+      } catch (error) {
+        console.log(error.message)
+      }
+     
     } else {
       res.json({
         code: -1,
@@ -146,5 +138,34 @@ router.post('/delete', function (req, res) {
   })
 })
 
+
+//修改数据库信息方法 http://localhost:3000/banner/update
+router.post('/update', (req, res) => {
+  //获取前端传递过来的新参数
+  let id = req.body.id;
+  let bannerName = req.body.bannerName;
+  let bannerUrl = req.body.bannerUrl;
+  //操作BannerModel 修改方法
+  console.log(id, bannerName, bannerUrl);
+  BannerModel.update({
+    _id: id
+  }, { $set: { name: bannerName, imgUrl: bannerUrl } }).then((data) => {
+    console.log(data);
+    if (data.nModified > 0) {
+      res.json({
+        node: 0,
+        msg: 'ok'
+      })
+    } else {
+      return Promise.reject(new Error('修改失败'))
+    }
+
+  }).catch(err => {
+    res.json({
+      code: -1,
+      msg: err.message
+    })
+  })
+})
 //最后暴露出去
 module.exports = router;
