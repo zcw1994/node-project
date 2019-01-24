@@ -110,11 +110,11 @@
       that.dom.updateNameInput.val('');
       that.dom.updateUrlInput.val('');
       //重新发送ajax请求数据，进行局部动态变化
-      
+      that.search(); 
       // 调用渲染 table
-      that.renderTable();
+      // that.renderTable();
       // 调用渲染 分页
-      that.renderPagination();
+      // that.renderPagination();
     })
 
   }
