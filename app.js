@@ -13,7 +13,8 @@ const cookieParse = require('cookie-parser');
 
  //路由中间件
  const indexRouter = require('./routes/indexRouter');
- const bannerRouter = require('./routes/bannerRouter')
+ const bannerRouter = require('./routes/bannerRouter');
+ const userRouter =require('./routes/userRouter');
  //静态文件托管
 app.use(express.static(path.resolve(__dirname,'./public')));
  
@@ -25,6 +26,7 @@ app.set('view engine','ejs');
 //路由文件的使用 
 app.use('/',indexRouter);
 app.use('/banner',bannerRouter);
+app.use('/user',userRouter);
 
 
  

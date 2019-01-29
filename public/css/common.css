@@ -4,30 +4,12 @@ html,body{
 body{
   display: flex;
 }
+/* 侧边栏 */
 .layout-side{
   width: 260px;
   height: 100%;
   background: #001529;
   flex-shrink: 0;/* 让其不会被挤压，维持原样  */
-}
-.layout-main{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background: #f0f2f5;
-}
-.layout-header{
-  background: #fff;
-  color: #000000;
-  height: 64px;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-}
-.layout-body{
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden
 }
 .layout-side a{
   height: 50px;
@@ -36,18 +18,23 @@ body{
   color: #fff;
   display: block;
   text-align: center
-
 }
 
-.zc-table{
-  width: 100%;
-  text-align: center ;
+/* 主题内容区  */
+.layout-main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f0f2f5;
 }
-.zc-table th , .zc-table td,.zc-table{
-  border: 1px solid #000000;
-}
-.zc-table .banner-img{
-  width: 100px 
+/* 主题内容头部 */
+.layout-header{
+  background: #393D49;
+  color: #000000;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 .header-left{
   display: block;
@@ -58,31 +45,13 @@ body{
 .header-left:hover{
   background: #cccccc
 }
-.self-pagination{
-  text-align: center
+.self-ico{
+  color: #fff;
 }
-.deleteInfo{
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 5px;
-  background: #337ab7;
-  color: #fff
-}
-.deleteInfo:hover{
-  color:red;
-}
-.updateInfo{
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 5px;
-  background: #337ab7;
-  margin-left: 10px;
-  color: #fff
-}
-.updateInfo:hover{
-  color:red;
+
+/* 内容展示区 */
+.layout-body{
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden
 }

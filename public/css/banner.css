@@ -1,0 +1,42 @@
+/* banner图管理页面展示区 */
+.zc-table{
+  width: 100%;
+  text-align: center ;
+}
+.zc-table th , .zc-table td,.zc-table{
+  border: 1px solid #000000;
+}
+.zc-table .banner-img{
+  width: 100px 
+}
+/* 分页选择按钮 */
+.self-pagination{
+  text-align: center
+}
+/* 删除按钮 */
+.deleteInfo{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  background: #337ab7;
+  color: #fff
+}
+.deleteInfo:hover{
+  color:red;
+}
+/* 修改按钮 */
+.updateInfo{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  background: #337ab7;
+  margin-left: 10px;
+  color: #fff
+}
+.updateInfo:hover{
+  color:red;
+}
