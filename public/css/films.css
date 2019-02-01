@@ -1,0 +1,122 @@
+
+.filmsList-wrapper{
+  margin-top: 10px;
+}
+.filmsLIst{
+  margin-left: 10px;
+  background: #ffffff;
+}
+/* li标签 */
+.nowFilmShow{
+  display: block;
+  padding: 15px 15px 15px 0px;
+  border-bottom: 1px solid #cccccc
+}
+/* 大a标签 */
+.filmItem{
+  display: flex;
+  position: relative;
+  height: 94px;
+  align-items: center;
+}
+/* 影片图 */
+.filmImg{
+  float: left;
+  width: 66px;
+  height: 94px;
+}
+.filmImg img{
+  width: 66px;
+  height: 94px;
+}
+/* 影片操作 */
+.doFilm{
+  float: right;
+}
+/* 删除按钮 */
+.flimDelete{
+  display: inline-block;
+  width: 40px;
+  height: 25px;
+  line-height: 25px;
+  color: #ff5f16;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #ff5f16;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+/* 修改按钮 */
+.flimUpdate{
+  display: inline-block;
+  width: 40px;
+  height: 25px;
+  line-height: 25px;
+  color: #ff5f16;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #ff5f16;
+  border-radius: 4px;
+}
+ .flimDelete:hover{
+  background: #ff5f16;
+  color: #ffffff;
+}
+.flimUpdate:hover{
+  background: #ff5f16;
+  color: #ffffff;
+}
+
+/* 影片详细 */
+.filmDetail{
+  flex: 1;
+  margin: 0 10px;
+  height: 82px;
+}
+.filmName{
+  height: 22px;
+  line-height: 22px;
+}
+.nowFlimName{
+  display: inline-block;
+  font-size: 16px;
+  color: #191a1b;
+}
+.filmType{
+  display: inline-block;
+  font-size: 10px;
+  height: 14px;
+  line-height: 14px;
+  background: #d2d6dc;
+  color: #ffffff;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+.filmGrade{
+  height: 20px;
+  box-sizing: border-box;
+}
+.zcw-label{
+  display: inline-block;
+  height: 16px;
+  width: 70px;
+  font-size: 13px;
+  color: #797d82;
+
+}
+.labelGrade{
+  font-size: 14px;
+  color: #ffb232;
+}
+.filmActors{
+  height: 20px;
+  line-height: 20px;
+  color: #797d82;
+  font-size: 13px;
+}
+.filmPlace{
+  height: 19px;
+  line-height: 19px;
+  color: #797d82;
+  font-size: 13px;
+}

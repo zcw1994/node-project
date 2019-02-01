@@ -15,11 +15,11 @@ const cookieParse = require('cookie-parser');
  const indexRouter = require('./routes/indexRouter');
  const bannerRouter = require('./routes/bannerRouter');
  const userRouter =require('./routes/userRouter');
+ const filmsRouter = require('./routes/filmsRouter');
  //静态文件托管
 app.use(express.static(path.resolve(__dirname,'./public')));
  
 //设置模板文件的位置，用的什么模板引擎
-
 app.set('views',path.resolve(__dirname,'./views'));
 app.set('view engine','ejs');
 
@@ -27,7 +27,7 @@ app.set('view engine','ejs');
 app.use('/',indexRouter);
 app.use('/banner',bannerRouter);
 app.use('/user',userRouter);
-
+app.use('/films',filmsRouter);
 
  
 
