@@ -1,0 +1,39 @@
+/* 影院头部 */
+.body-header{
+  height: 44px;
+  display: flex;
+  background: #ffffff;
+}
+.bodyHeader-left{
+  height: 44px;
+  line-height: 44px;
+  width: 213px;
+}
+.bodyHeader-left i{
+  display: block;
+}
+.bodyHeader-left img{
+  display: block;
+  height: 44px;
+}
+.bodyHeader-right{
+  height: 44px;
+  line-height: 44px;
+  width: 600px;
+  text-align: center;
+}
+.bodyTitle{
+  font-size: 18px;
+}
+/* 搜索城市框 */
+.bodySearch{
+  height: 50px;
+  padding: 10px 15px;
+}
+.searchInput{
+  height: 30px;
+  width: 100%;
+  font-size: 14px;
+  padding-left:20px;
+  border: 0px; 
+}

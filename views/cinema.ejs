@@ -11,13 +11,29 @@
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/common.css">
   <link rel="icon" href="/images/favicon.ico ">
-  <link rel="stylesheet" href="/css/banner.css">
+  <link rel="stylesheet" href="/css/cinema.css">
 </head>
 <body>
     <%- include('./common/side.ejs')%>
   <div class="layout-main">
     <%- include('./common/header.ejs')%>
-    <div class="layout-body"></div>
+    <div class="layout-body">
+      <div class="body-header">
+        <div class="bodyHeader-left">
+            <i><img src="/images/default.png" alt=""> </i>
+        </div>
+        <div class="bodyHeader-right">
+            <span class="bodyTitle">当前城市 - </span>
+        </div>
+      </div>
+      <div class="bodySearch">
+        <input type="text" placeholder="输入城市名或拼音" class="searchInput">
+      </div>
+
+
+
+
+    </div>
   </div>
   
 
