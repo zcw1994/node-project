@@ -1,50 +1,1781 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>mz影院管理</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/layui/css/layui.css">
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/common.css">
   <link rel="icon" href="/images/favicon.ico ">
   <link rel="stylesheet" href="/css/cinema.css">
 </head>
+
 <body>
-    <%- include('./common/side.ejs')%>
+  <%- include('./common/side.ejs')%>
   <div class="layout-main">
     <%- include('./common/header.ejs')%>
     <div class="layout-body">
       <div class="body-header">
         <div class="bodyHeader-left">
-            <i><img src="/images/default.png" alt=""> </i>
+          <i><img src="/images/default.png" alt=""> </i>
         </div>
         <div class="bodyHeader-right">
-            <span class="bodyTitle">当前城市 - </span>
+          <span class="bodyTitle">当前城市 - </span>
         </div>
       </div>
       <div class="bodySearch">
         <input type="text" placeholder="输入城市名或拼音" class="searchInput">
       </div>
-
+      <div class="main-cityList">
+        <ul class="main-indexList">
+          <div class="reccommend-city">
+            <div class="gprs-city">
+              <div class="city-index-title">
+                GPS定位你所在的城市
+              </div>
+              <ul class="city-index-detail clearfix">
+                <li class="city-item-gprs">
+                  <div class="city-item-text">
+                    定位失败
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="hot-city">
+              <div class="city-index-title">
+                热门城市
+              </div>
+              <ul class="city-index-detail clearfix">
+                <li class="city-item-gprs">
+                  <div class="city-item-text">
+                    北京
+                  </div>
+                </li>
+                <li class="city-item-gprs">
+                  <div class="city-item-text">
+                    上海
+                  </div>
+                </li>
+                <li class="city-item-gprs">
+                  <div class="city-item-text">
+                    广州
+                  </div>
+                </li>
+                <li class="city-item-gprs">
+                  <div class="city-item-text">
+                    深圳
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              A
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  阿拉善盟
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  鞍山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  安庆
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  安阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  安顺
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  安康
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              B
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  北京
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  保定
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  包头
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  巴彦淖尔
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  本溪
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  白山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  白城
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  蚌埠
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  亳州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  滨州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  北海
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  百色
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  巴中
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  毕节
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宝山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宝鸡
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  白银
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              C
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  承德
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  沧州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  长治
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  赤峰
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  朝阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  长春
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  常州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  滁州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  长沙
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  常德
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  郴州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  潮州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  重庆
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  成都
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  楚雄彝族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  澄迈县
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  昌江黎族自治县
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              D
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  大同
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  大连
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  丹东
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  大庆
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  东营
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  德州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  东莞
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  儋州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  德阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  达州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  大理白族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  定西
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              E
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  鄂尔多斯
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  鄂州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  恩施土家族苗族自治州
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              F
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  抚顺
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  阜新
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  阜阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  福州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  抚州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  佛山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  防城港
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              G
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  赣州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  广州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  桂林
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  贵港
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  广元
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  广安
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  甘孜藏族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  贵阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  固原
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              H
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  邯郸
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  衡水
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  呼和浩特
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  呼伦贝尔
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  葫芦岛
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  哈尔滨
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  鹤岗
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  黑河
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  淮安
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  杭州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  湖州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  合肥
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  淮南
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  淮北
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  黄山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  菏泽
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  黄石
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  黄冈
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  衡阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  怀化
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  惠州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  河源
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  贺州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  河池
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  海口
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  何红哈尼族彝族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  汉中
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  哈密
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              J
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  晋城
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  晋中
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  锦州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  吉林
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  嘉兴
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  金华
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  景德镇
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  九江
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  吉安
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  济南
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  济宁
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  焦作
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  荆门
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  荆州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  江门
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  揭阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  嘉峪关
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  酒泉
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  济源
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              K
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  开封
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  昆明
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  克拉玛依
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              L
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  廊坊
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  临汾
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  吕梁
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  辽阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  辽源
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  连云港
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  丽水
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  六安
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  龙岩
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  莱芜
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  临沂
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  聊城
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  洛阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  漯河
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  娄底
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  柳州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  来宾
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  泸州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  乐山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  六盘水
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  丽江
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  临沧
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  拉萨
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  兰州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  陇南
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  临高县
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  乐东黎族自治县
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  陵水彝族自治县
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              M
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  牡丹江
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  马鞍山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  茂名
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  梅州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  绵阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  眉山
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              N
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  南京
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  南通
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宁波
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  南平
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宁德
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  南昌
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  南阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  南宁
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  内江
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  南充
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              P
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  盘锦
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  莆田
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  萍乡
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  平顶山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  濮阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  攀枝花
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  普洱
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  儋州
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              Q
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  秦皇岛
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  齐齐哈尔
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  七台河
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  衢州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  泉州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  青岛
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  清远
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  钦州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  黔西南布依族苗族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  黔东南苗族侗族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  黔南布依族苗族治治周
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  曲靖
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  庆阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  潜江
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  琼海
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              R
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  日照
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              S
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  石家庄
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  朔州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  沈阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  四平
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  松原
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  双鸭山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  绥化
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  上海
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  苏州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宿迁
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  绍兴
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宿州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  厦门
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  三明
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  上饶
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  商丘
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  十堰
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  随州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  邵阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  韶关
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  深圳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  汕头
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  汕尾
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  三亚
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  遂宁
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  商洛
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  石嘴山
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              T
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  天津
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  唐山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  太原
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  铁岭
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  通化
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  泰州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  台州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  铜陵
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  泰安
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  铜仁
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  铜川
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  天门
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  屯昌县
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              W
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  乌兰察布
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  无锡
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  温州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  芜湖
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  潍坊
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  威海
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  武汉
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  梧州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  文山壮族苗族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  淮南
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  武威
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  吴忠
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  乌鲁木齐
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  五指山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  文昌
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              X
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  邢台
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  忻州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  兴安盟
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  锡林敦勒盟
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  徐州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宣城
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  新余
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  新乡
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  许昌
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  信阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  襄阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  孝感
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  咸宁
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  湘潭
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  湘西土家族苗族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  西双版纳傣族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  西安
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  咸阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  西宁
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  仙桃
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              Y
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  阳泉
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  运城
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  营口
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  延边朝鲜族自治州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  伊春
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  盐城
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  扬州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  鹰潭
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宜春
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  烟台
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宜昌
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  岳阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  益阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  永州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  阳江
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  云浮
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  玉林
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  宜宾
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  雅安
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  玉溪
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  延安
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  榆林
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  银川
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="main-indexsection">
+            <p class="main-indexsection-index">
+              Z
+            </p>
+            <ul>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  张家口
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  镇江
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  舟山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  漳州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  淄博
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  枣庄
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  郑州
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  周口
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  驻马店
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  株洲
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  张家界
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  珠海
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  湛江
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  肇庆
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  中山
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  自贡
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  资阳
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  遵义
+                </div>
+              </li>
+              <li class="city-item-detail-white">
+                <div class="city-item-text">
+                  中卫
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
 
 
 
     </div>
   </div>
-  
 
-   <!-- 引入的jquery库 -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <!-- 引入的bootscript中的js插件 -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-   <!-- 引入layui里的js插件 -->
-   <script src="/lib/layui/layui.all.js"></script>
-   <!-- 引入自己的js模块，对页面元素进行进一步操作 -->
-   <script src="/js/cinema.js">
-   </script>
+
+  <!-- 引入的jquery库 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- 引入的bootscript中的js插件 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+  <!-- 引入layui里的js插件 -->
+  <script src="/lib/layui/layui.all.js"></script>
+  <!-- 引入自己的js模块，对页面元素进行进一步操作 -->
+  <script src="/js/cinema.js">
+  </script>
 </body>
+
 </html>

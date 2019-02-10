@@ -28,3 +28,6 @@ input{
 	overflow:hidden;
 	clear:both;	
 }
+div{
+	box-sizing: border-box;
+}
